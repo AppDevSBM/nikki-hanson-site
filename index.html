@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Nikki Hanson — Business Change & Transformation Leader. Helping organisations navigate AI-driven change that actually sticks. 20+ years. Deutsche Bank, JLR, Munich Re.">
+<title>Nikki Hanson — Business Change & Transformation Leader</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy:    #0C2340;
+    --navy-2:  #0A1E36;
+    --navy-3:  #081829;
+    --gold:    #BA7517;
+    --gold-lt: #EF9F27;
+    --gold-bg: #FDF3E0;
+    --teal:    #1D9E75;
+    --white:   #FFFFFF;
+    --grey:    #888780;
+    --mid:     #5F5E5A;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--navy);
+    color: var(--white);
+    overflow-x: hidden;
+    min-height: 100vh;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .stripe {
+    position: fixed;
+    left: 0; top: 0; bottom: 0;
+    width: 5px;
+    background: var(--gold);
+    z-index: 100;
+  }
+
+  /* ── HEADER ── */
+  header {
+    position: relative; z-index: 10;
+    padding: 2.5rem 5rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 0;
+    animation: fadeUp 0.7s ease 0.1s forwards;
+  }
+
+  .logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    letter-spacing: 0.14em;
+    color: var(--white);
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  nav a {
+    color: var(--grey);
+    text-decoration: none;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-left: 2rem;
+    transition: color 0.2s;
+  }
+  nav a:hover { color: var(--gold-lt); }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative; z-index: 10;
+    padding: 5rem 5rem 4rem;
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 5rem;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .hero-left { }
+
+  .hero-eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.8rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    opacity: 0;
+    animation: fadeUp 0.7s ease 0.2s forwards;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 36px;
+    height: 1px;
+    background: var(--gold);
+    opacity: 0.6;
+    flex-shrink: 0;
+  }
+
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3.2rem, 6vw, 6rem);
+    font-weight: 600;
+    line-height: 1.0;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.1em;
+    opacity: 0;
+    animation: fadeUp 0.7s ease 0.3s forwards;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--gold-lt);
+  }
+
+  .hero-sub {
+    font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+    font-weight: 300;
+    color: rgba(255,255,255,0.68);
+    max-width: 540px;
+    line-height: 1.8;
+    margin: 2rem 0 2.5rem;
+    opacity: 0;
+    animation: fadeUp 0.7s ease 0.4s forwards;
+  }
+
+  .hero-sub strong {
+    color: rgba(255,255,255,0.9);
+    font-weight: 400;
+  }
+
+  .rule {
+    width: 60px; height: 1px;
+    background: var(--gold);
+    margin: 2rem 0;
+    opacity: 0;
+    animation: fadeUp 0.7s ease 0.35s forwards;
+  }
+
+  .credentials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 0;
+    margin-bottom: 3rem;
+    opacity: 0;
+    animation: fadeUp 0.7s ease 0.45s forwards;
+  }
+
+  .credential {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--grey);
+    margin-right: 1.2rem;
+  }
+
+  .credential::before {
+    content: '— ';
+    color: var(--gold);
+    opacity: 0.5;
+  }
+
+  .ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+    opacity: 0;
+    animation: fadeUp 0.7s ease 0.55s forwards;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    padding: 0.95rem 2rem;
+    background: var(--gold);
+    color: var(--navy);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-primary:hover { background: var(--gold-lt); transform: translateY(-2px); }
+
+  .btn-secondary {
+    display: inline-block;
+    padding: 0.95rem 2rem;
+    border: 1px solid rgba(186,117,23,0.35);
+    color: rgba(255,255,255,0.8);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: border-color 0.2s, color 0.2s, transform 0.15s;
+  }
+  .btn-secondary:hover { border-color: var(--gold); color: var(--gold-lt); transform: translateY(-2px); }
+
+  /* ── HERO IMAGE ── */
+  .hero-image {
+    position: relative;
+    opacity: 0;
+    animation: fadeUp 0.9s ease 0.5s forwards;
+  }
+
+  .hero-image::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border: 1px solid rgba(186,117,23,0.25);
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .hero-image::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    right: -12px;
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgba(186,117,23,0.12);
+    z-index: 0;
+  }
+
+  .hero-image img {
+    width: 100%;
+    height: 520px;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    position: relative;
+    z-index: 1;
+    filter: contrast(1.05) brightness(0.95);
+  }
+
+  .hero-image-caption {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    background: linear-gradient(transparent, rgba(8,24,41,0.92));
+    padding: 2rem 1.5rem 1.2rem;
+    z-index: 3;
+  }
+
+  .hero-image-caption p {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  /* ── PROOF BAR ── */
+  .proof-bar {
+    position: relative; z-index: 10;
+    border-top: 1px solid rgba(186,117,23,0.18);
+    border-bottom: 1px solid rgba(186,117,23,0.18);
+    background: rgba(10,30,54,0.6);
+    padding: 2rem 5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1.5rem;
+    opacity: 0;
+    animation: fadeUp 0.7s ease 0.65s forwards;
+  }
+
+  .proof-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    padding-right: 1.5rem;
+    border-right: 1px solid rgba(186,117,23,0.12);
+  }
+  .proof-item:last-child { border-right: none; }
+
+  .proof-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.4rem;
+    font-weight: 600;
+    color: var(--gold-lt);
+    line-height: 1;
+  }
+
+  .proof-label {
+    font-size: 0.72rem;
+    color: var(--grey);
+    letter-spacing: 0.04em;
+    line-height: 1.4;
+  }
+
+  /* ── CEO COMMENDATION ── */
+  .commendation {
+    position: relative; z-index: 10;
+    margin: 0 5rem;
+    padding: 2.5rem 3rem;
+    border-left: 3px solid var(--gold);
+    background: rgba(186,117,23,0.05);
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    margin-top: 4rem;
+  }
+
+  .commendation-icon {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+    opacity: 0.8;
+  }
+
+  .commendation-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.2rem, 2vw, 1.55rem);
+    font-weight: 400;
+    line-height: 1.5;
+    color: rgba(255,255,255,0.9);
+    font-style: italic;
+  }
+
+  .commendation-text strong {
+    font-style: normal;
+    color: var(--gold-lt);
+    font-weight: 600;
+  }
+
+  .commendation-source {
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--grey);
+    margin-top: 0.8rem;
+    font-style: normal;
+    display: block;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  /* ── ABOUT ── */
+  .about {
+    position: relative; z-index: 10;
+    padding: 6rem 5rem;
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 6rem;
+    align-items: start;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .about-left {
+    position: sticky;
+    top: 3rem;
+  }
+
+  .about-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+  }
+
+  .about-statement {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 3vw, 2.8rem);
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--white);
+  }
+
+  .about-statement em {
+    font-style: italic;
+    color: var(--gold-lt);
+  }
+
+  .about-right p {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.68);
+    line-height: 1.85;
+    margin-bottom: 1.4rem;
+    font-weight: 300;
+  }
+  .about-right p:last-child { margin-bottom: 0; }
+
+  .about-right strong {
+    color: rgba(255,255,255,0.92);
+    font-weight: 400;
+  }
+
+  .about-right .highlight {
+    color: var(--teal);
+    font-weight: 400;
+  }
+
+  /* ── CLIENT NAMES ── */
+  .clients {
+    position: relative; z-index: 10;
+    padding: 2.5rem 5rem;
+    border-top: 1px solid rgba(186,117,23,0.12);
+    border-bottom: 1px solid rgba(186,117,23,0.12);
+    background: rgba(8,24,41,0.4);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.6rem 0;
+  }
+
+  .clients-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-right: 2.5rem;
+    flex-shrink: 0;
+  }
+
+  .client-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    color: rgba(255,255,255,0.28);
+    letter-spacing: 0.04em;
+    margin-right: 2rem;
+    transition: color 0.2s;
+  }
+  .client-name:hover { color: rgba(255,255,255,0.55); }
+
+  /* ── PILLARS ── */
+  .pillars {
+    position: relative; z-index: 10;
+    padding: 6rem 5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .pillars-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 3rem;
+  }
+
+  .pillars-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .pillars-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-weight: 400;
+    color: var(--white);
+    line-height: 1.2;
+  }
+
+  .pillars-title em { font-style: italic; color: var(--gold-lt); }
+
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: rgba(186,117,23,0.12);
+  }
+
+  .pillar {
+    background: var(--navy-2);
+    padding: 2.5rem;
+    text-decoration: none;
+    transition: background 0.25s;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .pillar::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.35s ease;
+  }
+
+  .pillar:hover { background: #0d2848; }
+  .pillar:hover::after { transform: scaleX(1); }
+
+  .pillar-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 400;
+    color: rgba(186,117,23,0.18);
+    line-height: 1;
+    margin-bottom: 1.5rem;
+  }
+
+  .pillar-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.55rem;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 0.8rem;
+    line-height: 1.2;
+  }
+
+  .pillar-desc {
+    font-size: 0.85rem;
+    color: var(--grey);
+    line-height: 1.7;
+    margin-bottom: auto;
+    padding-bottom: 1.5rem;
+    font-weight: 300;
+  }
+
+  .pillar-cta {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    border-top: 1px solid rgba(186,117,23,0.2);
+    padding-top: 1.2rem;
+    margin-top: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: gap 0.2s;
+  }
+
+  .pillar:hover .pillar-cta { gap: 14px; }
+  .pillar-cta::after { content: '→'; }
+
+  /* ── CONTACT ── */
+  .contact {
+    position: relative; z-index: 10;
+    background: rgba(8,24,41,0.5);
+    border-top: 1px solid rgba(186,117,23,0.15);
+    padding: 6rem 5rem;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+
+  .contact-left {}
+
+  .contact-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-left h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    font-weight: 600;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-left h2 em { font-style: italic; color: var(--gold-lt); }
+
+  .contact-left p {
+    font-size: 0.92rem;
+    color: rgba(255,255,255,0.62);
+    line-height: 1.8;
+    font-weight: 300;
+    margin-bottom: 2.5rem;
+  }
+
+  .contact-right {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .contact-card {
+    background: var(--navy-2);
+    border: 1px solid rgba(186,117,23,0.15);
+    padding: 1.5rem;
+    text-decoration: none;
+    transition: border-color 0.2s, background 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+  }
+
+  .contact-card:hover {
+    border-color: rgba(186,117,23,0.5);
+    background: #0d2848;
+  }
+
+  .contact-card-icon { font-size: 1.3rem; flex-shrink: 0; }
+
+  .contact-card-text {}
+  .contact-card-title {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--white);
+    margin-bottom: 0.2rem;
+  }
+  .contact-card-sub {
+    font-size: 0.75rem;
+    color: var(--grey);
+  }
+
+  .contact-card-arrow {
+    margin-left: auto;
+    color: var(--gold);
+    font-size: 1rem;
+    flex-shrink: 0;
+    transition: transform 0.2s;
+  }
+  .contact-card:hover .contact-card-arrow { transform: translateX(4px); }
+
+  /* ── FOOTER ── */
+  footer {
+    position: relative; z-index: 10;
+    border-top: 1px solid rgba(186,117,23,0.12);
+    padding: 2rem 5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .footer-left {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.9rem;
+    color: var(--mid);
+    letter-spacing: 0.04em;
+  }
+
+  .social-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .social-links a {
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--mid);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .social-links a:hover { color: var(--gold); }
+
+  /* ── DECO ── */
+  .deco-ring {
+    position: fixed;
+    right: -100px; top: 5%;
+    width: 450px; height: 450px;
+    border-radius: 50%;
+    border: 1px solid rgba(186,117,23,0.06);
+    pointer-events: none; z-index: 1;
+  }
+  .deco-ring-2 {
+    position: fixed;
+    right: -60px; top: 8%;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    border: 1px solid rgba(186,117,23,0.05);
+    pointer-events: none; z-index: 1;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    header, .proof-bar, .commendation, .clients, .pillars, .contact, footer {
+      padding-left: 2rem; padding-right: 2rem;
+    }
+    .hero { grid-template-columns: 1fr; gap: 3rem; padding: 3rem 2rem; }
+    .hero-image { display: none; }
+    .about { grid-template-columns: 1fr; gap: 2rem; padding: 4rem 2rem; }
+    .about-left { position: static; }
+    .pillars-grid { grid-template-columns: 1fr; }
+    .pillars-header { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+    .contact { grid-template-columns: 1fr; gap: 3rem; padding: 4rem 2rem; }
+    nav { display: none; }
+    .commendation { margin: 2rem 2rem 0; flex-direction: column; gap: 1rem; }
+    .proof-bar { grid-template-columns: repeat(3, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<div class="stripe"></div>
+<div class="deco-ring"></div>
+<div class="deco-ring-2"></div>
+
+<!-- HEADER -->
+<header>
+  <a href="#" class="logo">Nikki Hanson</a>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#work">Work with me</a>
+    <a href="#contact">Get in touch</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <p class="hero-eyebrow">Business Change & Transformation Leader</p>
+    <h1>Change that<br><em>actually sticks.</em></h1>
+    <div class="rule"></div>
+    <p class="hero-sub">
+      Most transformation programmes fail — not because of the strategy, but because of the people. <strong>I bridge that gap.</strong> 20 years. C-Suite to front line. Mergers, ERP rollouts, AI adoption, restructures.
+    </p>
+    <div class="credentials">
+      <span class="credential">Prosci ADKAR</span>
+      <span class="credential">PRINCE2</span>
+      <span class="credential">Psychology BSc + PGDip</span>
+      <span class="credential">AI-Informed</span>
+    </div>
+    <div class="ctas">
+      <a href="https://go.oncehub.com/consultationnikkihanson" class="btn-primary">Book a free 30-min call</a>
+      <a href="#work" class="btn-secondary">See how I can help</a>
+    </div>
+  </div>
+
+  <div class="hero-image">
+    <img src="nikki_profile_square_1000px.jpg"
+         alt="Nikki Hanson — Business Change & Transformation Leader"
+         onerror="this.parentElement.style.display='none'">
+    <div class="hero-image-caption">
+      <p>Brighton &rarr; Southampton &mdash; Available globally</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF BAR -->
+<div class="proof-bar">
+  <div class="proof-item">
+    <span class="proof-num">20+</span>
+    <span class="proof-label">Years delivering change</span>
+  </div>
+  <div class="proof-item">
+    <span class="proof-num">£2M</span>
+    <span class="proof-label">Annual savings delivered</span>
+  </div>
+  <div class="proof-item">
+    <span class="proof-num">84%</span>
+    <span class="proof-label">Staff adoption on ERP rollout</span>
+  </div>
+  <div class="proof-item">
+    <span class="proof-num">£347K</span>
+    <span class="proof-label">Savings in under 7 months</span>
+  </div>
+  <div class="proof-item">
+    <span class="proof-num">1,100</span>
+    <span class="proof-label">Staff trained across one programme</span>
+  </div>
+  <div class="proof-item">
+    <span class="proof-num">47%</span>
+    <span class="proof-label">Reduction in service desk calls</span>
+  </div>
+</div>
+
+<!-- CEO COMMENDATION -->
+<div class="commendation">
+  <div class="commendation-icon">★</div>
+  <div>
+    <p class="commendation-text">
+      Received a <strong>personal commendation from the CEO of Munich Re</strong> following a town hall presentation that measurably shifted resistance across a 5-business entity merger.
+    </p>
+    <span class="commendation-source">Munich Re &mdash; Global reinsurer &mdash; 5-business merger</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about" class="about">
+  <div class="about-left">
+    <p class="about-label">Why it works</p>
+    <h2 class="about-statement">
+      People don't<br>resist change.<br>
+      They resist <em>loss.</em><br>
+      There's a difference.
+    </h2>
+  </div>
+  <div class="about-right">
+    <p>I hold a BSc and postgraduate degree in Psychology. That's not a side note — it's the reason my programmes land when others don't. I understand why people resist change, not just how to manage a programme around them.</p>
+    <p>Over 20 years I've led change at C-Suite level across financial services, higher education, manufacturing and logistics. I've built Change Champion networks from scratch, turned around deep resistance in complex matrixed organisations, and delivered results that are measured in millions saved and adoption rates that exceed expectations.</p>
+    <p><span class="highlight">Right now, AI adoption is the biggest change management challenge any organisation faces.</span> Not because the technology is complicated. Because people don't yet know what it means for them — and that uncertainty, left unaddressed, becomes resistance. I close that gap.</p>
+  </div>
+</section>
+
+<!-- CLIENTS -->
+<div class="clients">
+  <span class="clients-label">Organisations I've worked with</span>
+  <span class="client-name">Deutsche Bank</span>
+  <span class="client-name">Jaguar Land Rover</span>
+  <span class="client-name">FedEx</span>
+  <span class="client-name">Munich Re</span>
+  <span class="client-name">University of Nottingham</span>
+  <span class="client-name">Solent University</span>
+  <span class="client-name">E.ON</span>
+  <span class="client-name">Just Group</span>
+</div>
+
+<!-- PILLARS -->
+<section id="work" class="pillars">
+  <div class="pillars-header">
+    <p class="pillars-label">Three ways to work with me</p>
+    <h2 class="pillars-title">Where do you<br>need to <em>go?</em></h2>
+  </div>
+  <div class="pillars-grid">
+
+    <a href="https://go.oncehub.com/consultationnikkihanson" class="pillar">
+      <div class="pillar-num">01</div>
+      <div class="pillar-title">Consulting & Contracts</div>
+      <p class="pillar-desc">Senior change and transformation leadership for organisations navigating complex programmes. ERP rollouts, AI adoption, mergers, restructures. C-Suite to front line. Available now.</p>
+      <span class="pillar-cta">Book a free 30-min call</span>
+    </a>
+
+    <a href="https://buildtheclone.com" class="pillar">
+      <div class="pillar-num">02</div>
+      <div class="pillar-title">Build The Clone™</div>
+      <p class="pillar-desc">A 6-week programme for leaders who want to build their own AI capability. Not just tools — a fundamental shift in how you lead. The only AI programme that changes who you are, not just what you do.</p>
+      <span class="pillar-cta">Explore the programme</span>
+    </a>
+
+    <a href="https://nikksi.com" class="pillar">
+      <div class="pillar-num">03</div>
+      <div class="pillar-title">AI Readiness — Nikksi</div>
+      <p class="pillar-desc">AI readiness and transformation consultancy for organisations. Start with the free 20-question AI Readiness Assessment — understand exactly where you are before you build a plan.</p>
+      <span class="pillar-cta">Take the free assessment</span>
+    </a>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <div class="contact-left">
+    <p class="contact-label">Let's talk</p>
+    <h2>Ready when<br>you <em>are.</em></h2>
+    <p>No pitch. No pressure. A 30-minute conversation about where you are and whether I can help. If I can't, I'll tell you that too.</p>
+    <a href="https://go.oncehub.com/consultationnikkihanson" class="btn-primary">Book your free 30-min call</a>
+  </div>
+  <div class="contact-right">
+    <a href="https://go.oncehub.com/consultationnikkihanson" class="contact-card">
+      <span class="contact-card-icon">📩</span>
+      <div class="contact-card-text">
+        <div class="contact-card-title">Book a free 30-min call</div>
+        <div class="contact-card-sub">Consulting, contracts & change programmes</div>
+      </div>
+      <span class="contact-card-arrow">→</span>
+    </a>
+    <a href="https://buildtheclone.com" class="contact-card">
+      <span class="contact-card-icon">🤖</span>
+      <div class="contact-card-text">
+        <div class="contact-card-title">Build The Clone™</div>
+        <div class="contact-card-sub">AI capability programme for leaders</div>
+      </div>
+      <span class="contact-card-arrow">→</span>
+    </a>
+    <a href="https://nikksi.com" class="contact-card">
+      <span class="contact-card-icon">📊</span>
+      <div class="contact-card-text">
+        <div class="contact-card-title">Free AI Readiness Assessment</div>
+        <div class="contact-card-sub">nikksi.com — where does your organisation stand?</div>
+      </div>
+      <span class="contact-card-arrow">→</span>
+    </a>
+    <a href="mailto:nik@nikhanson.com" class="contact-card">
+      <span class="contact-card-icon">✉️</span>
+      <div class="contact-card-text">
+        <div class="contact-card-title">Email directly</div>
+        <div class="contact-card-sub">nik@nikhanson.com</div>
+      </div>
+      <span class="contact-card-arrow">→</span>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-left">Nikki Hanson &mdash; Business Change & Transformation Leader</span>
+  <div class="social-links">
+    <a href="https://linkedin.com/in/thenikkihanson" target="_blank">LinkedIn</a>
+    <a href="https://instagram.com/thenikkihanson" target="_blank">Instagram</a>
+    <a href="https://tiktok.com/@thenikkihanson" target="_blank">TikTok</a>
+    <a href="https://linktr.ee/nikkihanson" target="_blank">Linktree</a>
+  </div>
+</footer>
+
+</body>
+</html>

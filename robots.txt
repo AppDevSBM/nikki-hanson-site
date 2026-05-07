@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://nikhanson.com/sitemap.xml

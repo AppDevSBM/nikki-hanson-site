@@ -695,6 +695,20 @@
     to   { opacity: 1; transform: translateY(0); }
   }
 
+  .scroll-cue {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255,255,255,0.3);
+    font-size: 1.4rem;
+    animation: bounce 2s infinite;
+  }
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(8px); }
+  }
+
   /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
     header, .proof-bar, .commendation, .clients, .pillars, .contact, footer {
@@ -712,6 +726,86 @@
     .proof-bar { grid-template-columns: repeat(3, 1fr); }
   }
 </style>
+
+<link rel="canonical" href="https://nikhanson.com" />
+
+<meta property="og:title" content="Nikki Hanson — Business Change & Transformation Leader" />
+<meta property="og:description" content="Helping organisations navigate AI-driven change that actually sticks. 20+ years. Deutsche Bank, JLR, Munich Re." />
+<meta property="og:image" content="https://nikhanson.com/nikki_profile_square_1000px.jpg" />
+<meta property="og:url" content="https://nikhanson.com" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Nikki Hanson — Business Change & Transformation Leader" />
+<meta name="twitter:description" content="Helping organisations navigate AI-driven change that actually sticks." />
+<meta name="twitter:image" content="https://nikhanson.com/nikki_profile_square_1000px.jpg" />
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Nikki Hanson",
+  "jobTitle": "Business Change & Transformation Leader",
+  "description": "Senior change and transformation consultant with 20+ years experience. Specialising in AI adoption, ERP rollouts, mergers and organisational restructures.",
+  "url": "https://nikhanson.com",
+  "image": "https://nikhanson.com/nikki_profile_square_1000px.jpg",
+  "email": "nik@nikhanson.com",
+  "sameAs": [
+    "https://linkedin.com/in/thenikkihanson",
+    "https://instagram.com/thenikkihanson"
+  ],
+  "knowsAbout": ["Change Management", "AI Adoption", "Organisational Transformation", "Prosci ADKAR", "ERP Rollouts", "Business Psychology"]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Nikki Hanson Consulting",
+  "url": "https://nikhanson.com",
+  "founder": { "@type": "Person", "name": "Nikki Hanson" },
+  "description": "Business change and transformation consultancy specialising in AI adoption, ERP implementations, and complex organisational change.",
+  "areaServed": "GB",
+  "serviceType": ["Change Management", "AI Transformation", "Organisational Change"]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does Nikki Hanson specialise in?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nikki specialises in business change and transformation leadership, with particular expertise in AI adoption, ERP rollouts, mergers and restructures. She holds a BSc and PGDip in Psychology, which underpins her approach to managing human resistance to change."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does Nikki Hanson work with organisations?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nikki works with organisations in three ways: senior consulting and contract engagements for complex change programmes; the Build The Clone™ AI capability programme for leaders; and AI readiness assessments through Nikksi. All engagements start with a free 30-minute consultation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What organisations has Nikki Hanson worked with?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nikki has led change programmes at Deutsche Bank, Jaguar Land Rover, FedEx, Munich Re, the University of Nottingham, Solent University, E.ON, and Just Group, among others."
+      }
+    }
+  ]
+}
+</script>
+
+<script defer data-domain="nikhanson.com" src="https://plausible.io/js/script.js"></script>
 </head>
 <body>
 
@@ -758,6 +852,7 @@
       <p>Brighton &rarr; Southampton &mdash; Available globally</p>
     </div>
   </div>
+  <div class="scroll-cue" aria-hidden="true">↓</div>
 </section>
 
 <!-- PROOF BAR -->
@@ -844,14 +939,14 @@
       <span class="pillar-cta">Book a free 30-min call</span>
     </a>
 
-    <a href="https://buildtheclone.com" class="pillar">
+    <a href="https://buildtheclone.com" target="_blank" rel="noopener noreferrer" class="pillar">
       <div class="pillar-num">02</div>
       <div class="pillar-title">Build The Clone™</div>
-      <p class="pillar-desc">A 6-week programme for leaders who want to build their own AI capability. Not just tools — a fundamental shift in how you lead. The only AI programme that changes who you are, not just what you do.</p>
+      <p class="pillar-desc">A 6-week programme for leaders who want to build their own AI capability. Not just tools — a fundamental shift in how you lead. An AI programme designed to change who you are, not just what you do.</p>
       <span class="pillar-cta">Explore the programme</span>
     </a>
 
-    <a href="https://nikksi.com" class="pillar">
+    <a href="https://nikksi.com" target="_blank" rel="noopener noreferrer" class="pillar">
       <div class="pillar-num">03</div>
       <div class="pillar-title">AI Readiness — Nikksi</div>
       <p class="pillar-desc">AI readiness and transformation consultancy for organisations. Start with the free 20-question AI Readiness Assessment — understand exactly where you are before you build a plan.</p>
@@ -878,7 +973,7 @@
       </div>
       <span class="contact-card-arrow">→</span>
     </a>
-    <a href="https://buildtheclone.com" class="contact-card">
+    <a href="https://buildtheclone.com" target="_blank" rel="noopener noreferrer" class="contact-card">
       <span class="contact-card-icon">🤖</span>
       <div class="contact-card-text">
         <div class="contact-card-title">Build The Clone™</div>
@@ -886,7 +981,7 @@
       </div>
       <span class="contact-card-arrow">→</span>
     </a>
-    <a href="https://nikksi.com" class="contact-card">
+    <a href="https://nikksi.com" target="_blank" rel="noopener noreferrer" class="contact-card">
       <span class="contact-card-icon">📊</span>
       <div class="contact-card-text">
         <div class="contact-card-title">Free AI Readiness Assessment</div>
